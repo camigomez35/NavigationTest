@@ -1,0 +1,158 @@
+@import "fonts.css";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation */
+.nav {
+  background-color: #ec008c;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  position: fixed;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav .nav__primary {
+  font: 21px HUGEAvantGardeBold;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav .nav__primary .nav__item > a {
+  display: block;
+  color: #fff;
+  transition: all 0.5s ease;
+  margin: 0;
+  padding: 24px;
+}
+
+.nav .nav__primary li > a:hover {
+  color: #ec008c;
+  background-color: #fff;
+  transition: all 0.5s ease;
+}
+
+.nav__pointer {
+  cursor: pointer;
+}
+
+.nav .nav__primary .nav__secondary {
+  font: 16px Galaxie;
+  list-style-type: none;
+  position: absolute;
+  padding: 0;
+  background-color: #fff;
+  display: none;
+}
+
+.nav .nav__primary .nav__item--open > a{
+  background-color: #fff;
+  color: #ec008c;
+}
+
+.nav .nav__primary .nav__item--open > .nav__secondary {
+  display: block;
+}
+
+.nav .nav__primary .nav__secondary a {
+  color: #4b4b4b;
+  line-height: 48px;
+  padding: 0 24px;
+}
+
+
+.nav .nav__primary .nav__secondary li > a:hover {
+  background-color: #eee;
+}
+
+.nav .nav__primary .nav__secondary li:first-child a {
+  padding-top: 12px;
+}
+
+.nav .nav__primary .nav__secondary li:last-child a {
+  padding-bottom: 12px;
+}
+
+/* Logo */
+.nav .nav__logo img {
+  padding: 24px 48px 24px 24px;
+  height: 19px;
+  width: 60px;
+}
+
+/* Content */
+.container {
+  margin: 1px solid black;
+  background-color: rgba(128, 128, 128, 0);
+}
+
+.container .container__image-backgrond {
+  width: 100%;
+  height: 640px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    display: block;
+    background-color: initial;
+    height: 100%;
+  }
+
+  .nav .nav__logo {
+    background-color: #ec008c;
+  }
+
+  .nav .nav__primary {
+    background-color: #fff;
+    display: block;
+    width: 80%;
+    height: 100%;
+  }
+
+  .nav .nav__primary li:first-child a {
+    padding-top: 12px;
+  }
+
+  .nav .nav__primary .nav__item > a {
+    color: #4b4b4b;
+    padding: 0 24px;
+    line-height: 48px;
+  }
+
+  .nav .nav__primary li > a:hover {
+    background-color: #eee;
+    color: #4b4b4b;
+  }
+
+  .nav .nav__primary .nav__item > li:hover {
+    color: #4b4b4b;
+    background-color: #eee;
+  }
+
+  .nav .nav__primary .nav__secondary {
+    width: 100%;
+  }
+
+  .nav .nav__primary .nav__secondary > li:hover > a {
+    color: #ec008c;
+  }
+
+  .nav .nav__primary .nav__item--open {
+    display: contents;
+  }
+
+  .nav .nav__primary .nav__item--open .nav__secondary{
+    position: relative;
+  }
+}
