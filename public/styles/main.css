@@ -5,6 +5,10 @@ body {
   padding: 0;
 }
 
+body.body--open #back{
+  visibility: visible;
+}
+
 /* Navigation */
 .nav {
   background-color: #ec008c;
@@ -70,7 +74,6 @@ body {
   padding: 0 24px;
 }
 
-
 .nav .nav__primary .nav__secondary li > a:hover {
   background-color: #eee;
 }
@@ -83,14 +86,17 @@ body {
   padding-bottom: 12px;
 }
 
+/* Edn Navigation */
+
 /* Logo */
 .nav .nav__logo img {
   padding: 24px 48px 24px 24px;
   height: 19px;
   width: 60px;
 }
+/* End Logo */
 
-/* Content */
+/* Container page */
 .container {
   margin: 1px solid black;
   background-color: rgba(128, 128, 128, 0);
@@ -100,7 +106,31 @@ body {
   width: 100%;
   height: 640px;
 }
+/* End container page*/
 
+#back {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+}
+
+/* Main text */
+.content {
+  font: 24px/36px Galaxie;
+  text-align:center;
+  margin: 60px;
+}
+.content__primary {
+  max-width: 968px;
+  text-align: justify;
+  margin: auto;
+  padding: 0;
+}
+/* End Main text */
 
 @media only screen and (max-width: 768px) {
   .nav {
