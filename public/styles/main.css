@@ -1,15 +1,15 @@
 @import "fonts.css";
-
 body {
   margin: 0;
   padding: 0;
 }
 
-body.body--open #back{
+body.body--open #back {
   visibility: visible;
 }
 
 /* Navigation */
+
 .nav {
   background-color: #ec008c;
   margin: 0;
@@ -18,6 +18,10 @@ body.body--open #back{
   width: 100%;
   display: flex;
   position: fixed;
+}
+
+.nav__pointer {
+  cursor: pointer;
 }
 
 .nav a {
@@ -32,7 +36,7 @@ body.body--open #back{
   display: flex;
 }
 
-.nav .nav__primary .nav__item > a {
+.nav .nav__primary .nav__item>a {
   display: block;
   color: #fff;
   transition: all 0.5s ease;
@@ -40,14 +44,10 @@ body.body--open #back{
   padding: 24px;
 }
 
-.nav .nav__primary li > a:hover {
+.nav .nav__primary li>a:hover {
   color: #ec008c;
   background-color: #fff;
   transition: all 0.5s ease;
-}
-
-.nav__pointer {
-  cursor: pointer;
 }
 
 .nav .nav__primary .nav__secondary {
@@ -59,12 +59,12 @@ body.body--open #back{
   display: none;
 }
 
-.nav .nav__primary .nav__item--open > a{
+.nav .nav__primary .nav__item--open>a {
   background-color: #fff;
   color: #ec008c;
 }
 
-.nav .nav__primary .nav__item--open > .nav__secondary {
+.nav .nav__primary .nav__item--open>.nav__secondary {
   display: block;
 }
 
@@ -74,7 +74,7 @@ body.body--open #back{
   padding: 0 24px;
 }
 
-.nav .nav__primary .nav__secondary li > a:hover {
+.nav .nav__primary .nav__secondary li>a:hover {
   background-color: #eee;
 }
 
@@ -86,8 +86,6 @@ body.body--open #back{
   padding-bottom: 12px;
 }
 
-/* Edn Navigation */
-
 /* Logo */
 .nav .nav__logo img {
   padding: 24px 48px 24px 24px;
@@ -96,17 +94,36 @@ body.body--open #back{
 }
 /* End Logo */
 
-/* Container page */
-.container {
-  margin: 1px solid black;
-  background-color: rgba(128, 128, 128, 0);
+/* End Navigation */
+
+/* Body Copy  */
+.content {
+  font: 24px/36px Galaxie;
+  text-align: center;
+  margin: 0;
 }
 
-.container .container__image-backgrond {
+.content .content__image-backgrond {
   width: 100%;
   height: 640px;
 }
-/* End container page*/
+
+.content .content__title {
+  /* font: 120px/132px HUGEAvantGardeBold;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%); */
+}
+
+.content .content__text {
+  max-width: 968px;
+  text-align: justify;
+  margin: auto;
+  padding: 60px;
+}
+/* End Body Copy */
 
 #back {
   position: fixed;
@@ -118,71 +135,73 @@ body.body--open #back{
   visibility: hidden;
 }
 
-/* Main text */
-.content {
-  font: 24px/36px Galaxie;
-  text-align:center;
-  margin: 60px;
-}
-.content__primary {
-  max-width: 968px;
-  text-align: justify;
-  margin: auto;
-  padding: 0;
-}
-/* End Main text */
-
 @media only screen and (max-width: 768px) {
+  /* Navigation */
   .nav {
     display: block;
     background-color: initial;
     height: 100%;
   }
-
   .nav .nav__logo {
     background-color: #ec008c;
   }
-
+  .nav .nav__logo img {
+    padding: 20px 24px;
+    width: 50px;
+  }
   .nav .nav__primary {
     background-color: #fff;
     display: block;
     width: 80%;
     height: 100%;
   }
-
   .nav .nav__primary li:first-child a {
     padding-top: 12px;
   }
-
-  .nav .nav__primary .nav__item > a {
+  .nav .nav__primary .nav__item>a {
     color: #4b4b4b;
     padding: 0 24px;
     line-height: 48px;
   }
-
-  .nav .nav__primary li > a:hover {
+  .nav .nav__primary li>a:hover {
     background-color: #eee;
     color: #4b4b4b;
   }
-
-  .nav .nav__primary .nav__item > li:hover {
+  .nav .nav__primary .nav__item>li:hover {
     color: #4b4b4b;
     background-color: #eee;
   }
-
   .nav .nav__primary .nav__secondary {
     width: 100%;
   }
-
-  .nav .nav__primary .nav__secondary > li:hover > a {
+  .nav .nav__primary .nav__secondary>li:hover>a {
     color: #ec008c;
   }
-
   .nav .nav__primary .nav__item--open {
     display: contents;
   }
-
-  .nav .nav__primary .nav__item--open .nav__secondary{
+  .nav .nav__primary .nav__item--open .nav__secondary {
     position: relative;
   }
+  .nav .nav--toggle {
+    display: none;
+  }
+  /* End Navigation */
+
+  /* Body Copy  */
+  .content .content__image-backgrond {
+    height: 240px;
+  }
+  .content .content__title {
+    font: 44px/48px HUGEAvantGardeBold;
+    margin: 50px;
+  }
+  .content .content__text {
+    font: 14px/24px Galaxie;
+    max-width: 968px;
+    text-align: justify;
+    margin: auto;
+    padding: 0 24px;
+  }
+  /* End Body Copy  */
 }
