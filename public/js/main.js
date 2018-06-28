@@ -1,12 +1,12 @@
 
-showItems()
+showItems();
 
 function showItems() {
     var data = getItems();
     var logo = '<div class="nav__logo"><img src="./images/HUGE-white.png"></div>'
     var navbar = document.getElementById("navbar");
-    menu = createNavigation(data.items, 1)
-    navbar.innerHTML = logo + menu
+    menu = createNavigation(data.items, 1);
+    navbar.innerHTML += logo + menu;
 
     var items = document.getElementsByClassName('nav__item nav__item_list');
     for (var count = 0; count < items.length; count++) {
@@ -65,20 +65,36 @@ function createlist(items) {
 
 function toogleSubMenu() {
     var oldItem = document.getElementsByClassName('nav__item nav__item_list nav__item--open')[0];
-    if (oldItem) {
+    // removeClass(document.getElementsByClassName('nav__item--open')[0], 'nav__item--open');
+
+    if (oldItem == this) {
         removeClass(oldItem, 'nav__item--open');
         removeClass(document.getElementsByTagName("BODY")[0], 'body--open');
-    }
-    if (this && oldItem !== this) {
-        this.className += ' nav__item--open';
-        document.getElementsByTagName("BODY")[0].className += 'body--open'
-        // removeClass(document.getElementsByTagName("BODY")[0], 'body--open');
+    } else if(oldItem) {
+        removeClass(oldItem, 'nav__item--open');
+        setClass(this, 'nav__item--open');
+        setClass(document.getElementsByTagName("BODY")[0], 'body--open');
+    } else {
+        setClass(this, 'nav__item--open');
+        setClass(document.getElementsByTagName("BODY")[0], 'body--open');
     }
 }
 
-function removeClass(element, className) {
-    var classArray = element.className.split(' ');
-    var index = classArray.indexOf(className);
-    classArray.splice(index, 1);
-    element.className = classArray.join(' ');
+function closeMenu() {
+    var oldItem = document.getElementsByClassName('nav__item nav__item_list nav__item--open')[0];
+    if(oldItem) {
+        removeClass(oldItem, 'nav__item--open');
+    }
+    removeClass(document.getElementsByTagName("BODY")[0], 'body--open');
 }
+
+
+setClass = (element, className) => {
+    element.classList.add(className)
+}
+
+removeClass = (element, className) => {
+    element.classList.remove(className)
+}
+
+document.getElementById('back').addEventListener('click', closeMenu)
