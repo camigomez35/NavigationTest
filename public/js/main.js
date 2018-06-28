@@ -3,10 +3,9 @@ showItems();
 
 function showItems() {
     var data = getItems();
-    var logo = '<div class="nav__logo"><img src="./images/HUGE-white.png"></div>'
     var navbar = document.getElementById("navbar");
     menu = createNavigation(data.items, 1);
-    navbar.innerHTML += logo + menu;
+    navbar.innerHTML += menu;
 
     var items = document.getElementsByClassName('nav__item nav__item_list');
     for (var count = 0; count < items.length; count++) {
@@ -54,7 +53,7 @@ function createlist(items) {
             li += '<a id="' + item.label + '">' + item.label + '<span class="nav__item_arrow"/></span></a>' + createNavigation(item.items, 2);
         } else {
             li += '<li class="nav__item"> ';
-            li += '<a id="' + item.label + '" href="' + item.url + '">' + item.label + '</a>';
+            li += '<a id="' + item.label + '" href="' + item.url + '" target="_blank">' + item.label + '</a>';
         }
         li += '</li>'
         menu += li;
@@ -66,8 +65,7 @@ function createlist(items) {
 function toogleSubMenu() {
     var oldItem = document.getElementsByClassName('nav__item nav__item_list nav__item--open')[0];
     // removeClass(document.getElementsByClassName('nav__item--open')[0], 'nav__item--open');
-
-    if (oldItem == this) {
+    if (oldItem === this) {
         removeClass(oldItem, 'nav__item--open');
         removeClass(document.getElementsByTagName("BODY")[0], 'body--open');
     } else if(oldItem) {
@@ -80,12 +78,23 @@ function toogleSubMenu() {
     }
 }
 
-function closeMenu() {
+closeAll = () => {
     var oldItem = document.getElementsByClassName('nav__item nav__item_list nav__item--open')[0];
     if(oldItem) {
         removeClass(oldItem, 'nav__item--open');
     }
     removeClass(document.getElementsByTagName("BODY")[0], 'body--open');
+    removeClass(document.getElementsByTagName("BODY")[0], 'body__toggle--open');
+}
+
+openMenu = () => {
+    setClass(document.getElementsByTagName("BODY")[0], 'body--open');
+    setClass(document.getElementsByTagName("BODY")[0], 'body__toggle--open');
+}
+
+closeMenu = () => {
+    removeClass(document.getElementsByTagName("BODY")[0], 'body--open');
+    removeClass(document.getElementsByTagName("BODY")[0], 'body__toggle--open');
 }
 
 
@@ -97,4 +106,6 @@ removeClass = (element, className) => {
     element.classList.remove(className)
 }
 
-document.getElementById('back').addEventListener('click', closeMenu)
+document.getElementById('back').addEventListener('click', closeAll);
+document.getElementById('toggle-open').addEventListener('click', openMenu);
+document.getElementById('toggle-close').addEventListener('click', closeMenu);

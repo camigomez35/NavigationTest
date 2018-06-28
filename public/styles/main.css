@@ -4,10 +4,6 @@ body {
   padding: 0;
 }
 
-body.body--open #back {
-  visibility: visible;
-}
-
 /* Navigation */
 
 .nav {
@@ -35,6 +31,7 @@ body.body--open #back {
   margin: 0;
   padding: 0;
   display: flex;
+  overflow-x: hidden;
 }
 
 .nav .nav__primary .nav__item>a {
@@ -87,15 +84,34 @@ body.body--open #back {
   padding-bottom: 12px;
 }
 
-/* Logo */
+/* Top */
 
-.nav .nav__logo img {
+.nav .nav__top .nav__logo {
   padding: 24px 48px 24px 24px;
   height: 19px;
   width: 60px;
 }
 
-/* End Logo */
+.nav .nav__top .nav__toggle {
+  height: 20px;
+  width: 24px;
+  margin: 20px 24px;
+  visibility: hidden;
+}
+
+.nav .nav__top .nav__toggle--open {
+  background: url(/images/toggle-open.svg) no-repeat center center;
+  left: 0px;
+  
+}
+
+.nav .nav__top .nav__toggle--close {
+  background: url(/images/toggle-close.svg) no-repeat center center;
+  right: 0px;
+  position: absolute;
+}
+
+/* End Top */
 
 /* End Navigation */
 
@@ -141,6 +157,7 @@ body.body--open #back {
   visibility: hidden;
   z-index: -1;
 }
+
 @media only screen and (min-width: 769px) {
   .content .content__title {
     font: 120px/132px HUGEAvantGardeBold;
@@ -148,7 +165,11 @@ body.body--open #back {
     position: absolute;
     top: 25%;
     left: 0;
-    width: 100%; 
+    width: 100%;
+  }
+
+  body.body--open #back {
+    visibility: visible;
   }
 }
 
@@ -159,17 +180,20 @@ body.body--open #back {
     background-color: initial;
     height: 100%;
   }
-  .nav .nav__logo {
-    background-color: #ec008c;
+  body.body__toggle--open #back {
+    visibility: visible;
   }
-  .nav .nav__logo img {
-    padding: 20px 24px;
-    width: 50px;
+  .body__toggle--open .nav .nav__primary {
+    width: 250px;
+  }
+  .body__toggle--open .content {
+    left: 250px;
+    transition: margin-left .5s;
   }
   .nav .nav__primary {
     background-color: #fff;
     display: block;
-    width: 80%;
+    width: 0;
     height: 100%;
   }
   .nav .nav__primary li:first-child a {
@@ -212,12 +236,32 @@ body.body--open #back {
   .nav .nav__primary .nav__item--open .nav__secondary {
     position: relative;
   }
-  .nav .nav--toggle {
-    display: none;
-  }
   /* End Navigation */
+  /* Top */
+  .nav .nav__top {
+    background-color: #ec008c;
+  }
+  .nav .nav__top .nav__logo {
+    padding: 20px 24px;
+    width: 50px;
+    visibility: hidden;
+  }
+  .nav .nav__top .nav__toggle--open {
+    visibility: visible;
+    position: absolute;
+  }
+  .body__toggle--open .nav .nav__top .nav__logo {
+    visibility: visible;
+  }
+  .body__toggle--open .nav .nav__top .nav__toggle--open {
+    visibility: hidden;
+  }
+  .body__toggle--open .nav .nav__top .nav__toggle--close {
+    visibility: visible;
+  }
+  /* End Top */
   /* Body Copy  */
-  .content .content__image-backgrond {
+  .content .content__cover .content__image_backgrond {
     height: 240px;
   }
   .content .content__title {
