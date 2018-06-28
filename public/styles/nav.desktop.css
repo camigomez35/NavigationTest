@@ -1,0 +1,112 @@
+/* Navigation */
+
+.nav {
+    background-color: #ec008c;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 1;
+}
+
+.nav__pointer {
+    cursor: pointer;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav .nav__primary {
+    font: 21px HUGEAvantGardeBold;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.nav .nav__primary .nav__item>a {
+    display: block;
+    color: #fff;
+    margin: 0;
+    padding: 24px;
+    transition: 0.3s;
+}
+
+.nav .nav__primary li>a:hover {
+    color: #ec008c;
+    background-color: #fff;
+    transition: all 0.5s ease;
+}
+
+.nav .nav__primary .nav__secondary {
+    font: 16px Galaxie;
+    list-style-type: none;
+    position: absolute;
+    padding: 0;
+    background-color: #fff;
+    display: none;
+}
+
+.nav .nav__primary .nav__item--open>a {
+    background-color: #fff;
+    color: #ec008c;
+}
+
+.nav .nav__primary .nav__item--open>.nav__secondary {
+    display: block;
+}
+
+.nav .nav__primary .nav__secondary a {
+    color: #4b4b4b;
+    line-height: 48px;
+    padding: 0 24px;
+}
+
+.nav .nav__primary .nav__secondary li>a:hover {
+    background-color: #eee;
+}
+
+.nav .nav__primary .nav__secondary li:first-child a {
+    padding-top: 12px;
+}
+
+.nav .nav__primary .nav__secondary li:last-child a {
+    padding-bottom: 12px;
+}
+
+/* Top */
+
+.nav .nav__top .nav__logo {
+    padding: 24px 48px 24px 24px;
+    height: 19px;
+    width: 60px;
+}
+
+.nav .nav__top .nav__toggle {
+    height: 20px;
+    width: 24px;
+    margin: 20px 24px;
+    visibility: hidden;
+    display: none;
+}
+
+.nav .nav__top .nav__toggle--open {
+    background: url(/images/toggle-open.svg) no-repeat center center;
+    left: 0px;
+    transition: 0.3s;
+}
+
+.nav .nav__top .nav__toggle--close {
+    background: url(/images/toggle-close.svg) no-repeat center center;
+    right: 0px;
+    position: absolute;
+}
+
+/* End Top */
+
+/* End Navigation */

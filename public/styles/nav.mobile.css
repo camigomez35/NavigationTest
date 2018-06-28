@@ -1,0 +1,107 @@
+@media only screen and (max-width: 768px) {
+  /* Navigation */
+  .nav {
+    display: block;
+    background-color: initial;
+    height: 100%;
+  }
+  body.body__toggle--open #back {
+    visibility: visible;
+  }
+  .body__toggle--open .nav .nav__primary {
+    width: 250px;
+  }
+  .body__toggle--open .content {
+    left: 250px;
+  }
+  .nav .nav__primary {
+    background-color: #fff;
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+  .nav .nav__primary li:first-child a {
+    padding-top: 12px;
+  }
+  .nav .nav__primary .nav__item a {
+    color: #4b4b4b;
+    padding: 0 0 0 24px;
+    line-height: 48px;
+  }
+  .nav .nav__primary li>a:hover {
+    background-color: #eee;
+    color: #4b4b4b;
+  }
+  .nav .nav__primary .nav__item>li:hover {
+    color: #4b4b4b;
+    background-color: #eee;
+  }
+  .nav .nav__primary .nav__secondary {
+    width: 100%;
+  }
+  .nav .nav__primary .nav__secondary>li:hover>a {
+    color: #ec008c;
+  }
+  .nav .nav__primary .nav__item--open {
+    display: contents;
+  }
+  .nav .nav__primary .nav__item_arrow {
+    width: 45px;
+    height: 45px;
+    float: right;
+    font-size: 2rem;
+    background: url(/images/arrow.svg) no-repeat center center;
+    transition: all 0.5s ease;
+    transform: rotate(0deg);
+  }
+  .nav .nav__primary .nav__item--open .nav__item_arrow {
+    transform: rotate(180deg);
+  }
+  .nav .nav__primary .nav__item--open .nav__secondary {
+    position: relative;
+  }
+  /* End Navigation */
+  /* Top */
+  .nav .nav__top {
+    background-color: #ec008c;
+  }
+  .nav .nav__top .nav__logo {
+    padding: 20px 24px;
+    width: 50px;
+    visibility: hidden;
+  }
+  .nav .nav__top .nav__toggle {
+    display: inline;
+  }
+  .nav .nav__top .nav__toggle--open {
+    visibility: visible;
+    position: absolute;
+  }
+  .body__toggle--open .nav .nav__top .nav__logo {
+    visibility: visible;
+  }
+  .body__toggle--open .nav .nav__top .nav__toggle--open {
+    visibility: hidden;
+    margin-left: 90%; 
+  }
+  .body__toggle--open .nav .nav__top .nav__toggle--close {
+    visibility: visible;
+  }
+  /* End Top */
+  /* Body Copy  */
+  .content .content__cover .content__image_backgrond {
+    height: 240px;
+  }
+  .content .content__title {
+    font: 44px/48px HUGEAvantGardeBold;
+    margin: 50px;
+  }
+  .content .content__text {
+    font: 14px/24px Galaxie;
+    max-width: 968px;
+    text-align: justify;
+    margin: auto;
+    padding: 0 24px;
+  }
+  /* End Body Copy  */
+}
