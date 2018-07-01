@@ -19,6 +19,8 @@
     text-decoration: none;
 }
 
+/* Primary */
+
 .nav .nav__primary {
     font: 21px HUGEAvantGardeBold;
     list-style-type: none;
@@ -61,6 +63,9 @@
     display: block;
 }
 
+/* End Primary */
+
+/* Secondary */
 .nav .nav__primary .nav__secondary a {
     color: #4b4b4b;
     line-height: 48px;
@@ -79,7 +84,9 @@
     padding-bottom: 12px;
 }
 
-/* Top */
+/* End Secondary */
+
+/* Top - Logo and Toggle img */
 
 .nav .nav__top .nav__logo {
     padding: 24px 48px 24px 24px;
