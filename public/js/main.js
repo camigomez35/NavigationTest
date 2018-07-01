@@ -3,7 +3,7 @@ showItems();
 
 function showItems() {
     var data = getItems();
-    var navbar = document.getElementById("navbar");
+    var navbar = document.getElementById("menu");
     menu = createNavigation(data.items, 1);
     navbar.innerHTML += menu;
 

@@ -1,19 +1,19 @@
 @media only screen and (max-width: 768px) {
+  
   /* Navigation */
+  
   .nav {
     display: block;
     background-color: initial;
+  }
+
+  /* Primary */
+
+  .nav .nav__menu {
     height: 100%;
+    position: fixed;
   }
-  body.body__toggle--open #back {
-    visibility: visible;
-  }
-  .body__toggle--open .nav .nav__primary {
-    width: 250px;
-  }
-  .body__toggle--open .content {
-    left: 250px;
-  }
+
   .nav .nav__primary {
     background-color: #fff;
     display: block;
@@ -36,6 +36,11 @@
     color: #4b4b4b;
     background-color: #eee;
   }
+
+  /* End Primary */
+
+  /* Secondary */
+
   .nav .nav__primary .nav__secondary {
     width: 100%;
   }
@@ -60,8 +65,22 @@
   .nav .nav__primary .nav__item--open .nav__secondary {
     position: relative;
   }
+
+  /* End Secondary */
+ 
   /* End Navigation */
+  
   /* Top */
+
+  body.body__toggle--open #back {
+    visibility: visible;
+  }
+  .body__toggle--open .nav .nav__primary {
+    width: 250px;
+  }
+  .body__toggle--open .content {
+    left: 250px;
+  }
   .nav .nav__top {
     background-color: #ec008c;
   }
@@ -87,21 +106,6 @@
   .body__toggle--open .nav .nav__top .nav__toggle--close {
     visibility: visible;
   }
+  
   /* End Top */
-  /* Body Copy  */
-  .content .content__cover .content__image_backgrond {
-    height: 240px;
-  }
-  .content .content__title {
-    font: 44px/48px HUGEAvantGardeBold;
-    margin: 50px;
-  }
-  .content .content__text {
-    font: 14px/24px Galaxie;
-    max-width: 968px;
-    text-align: justify;
-    margin: auto;
-    padding: 0 24px;
-  }
-  /* End Body Copy  */
 }
