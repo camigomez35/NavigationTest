@@ -1,6 +1,6 @@
-
-showItems();
-
+/**
+ * Add menu to navigation and add event listener -> Click
+ */
 function showItems() {
     var data = getItems();
     var navbar = document.getElementById("menu");
@@ -16,9 +16,10 @@ function showItems() {
 }
 
 /**
- * Get Items from API.
+ * Return data for build menu.
+ * 
+ * @returns {JSON} Menu data
  */
-
 function getItems() {
     var XMLhttp = new XMLHttpRequest();
     XMLhttp.open("GET", "./api/nav.json", false);
@@ -26,10 +27,21 @@ function getItems() {
     return JSON.parse(XMLhttp.responseText);
 }
 
+/**
+ * Create primary or secondary navigation
+ * 
+ * @param {JSON} items
+ * @param {number} type 
+ * Navigation type: 
+ * 
+ * Type 1: Primary navigation //
+ * Type 2: Secondary navigation
+ * @returns {string} <ul> structure
+ */
 function createNavigation(items, type) {
     switch (type) {
         case 1:
-            menu = '<ul class="nav__primary">' + createlist(items) + '</ul>';
+            menu = '<ul class="nav__primary">' + createlist(items) + '</ul> <span class="nav__copy">© 2014 Huge. All Rights Reserved.</span>';
             break;
         case 2:
             menu = '<ul class="nav__secondary">' + createlist(items) + '</ul>';
@@ -41,6 +53,12 @@ function createNavigation(items, type) {
     return menu
 }
 
+/**
+ * Create items of navigation.
+ * 
+ * @param {JSON} items Items
+ * @returns {string} <li> items struture.
+ */
 function createlist(items) {
     var menu = "";
     if (items === undefined || items.length === 0) return menu;
@@ -58,13 +76,17 @@ function createlist(items) {
         li += '</li>'
         menu += li;
     }
-
     return menu
 }
 
+/**
+ * Function of toggle menu.
+ * Add ClassName for open or close submenu or secondary navigation.
+ * 
+ * @returns {void}
+ */
 function toogleSubMenu() {
     var oldItem = document.getElementsByClassName('nav__item nav__item_list nav__item--open')[0];
-    // removeClass(document.getElementsByClassName('nav__item--open')[0], 'nav__item--open');
     if (oldItem === this) {
         removeClass(oldItem, 'nav__item--open');
         removeClass(document.getElementsByTagName("BODY")[0], 'body--open');
@@ -76,9 +98,15 @@ function toogleSubMenu() {
         setClass(this, 'nav__item--open');
         setClass(document.getElementsByTagName("BODY")[0], 'body--open');
     }
+    return;
 }
 
-closeAll = () => {
+/**
+ * Close menu and submenu.
+ * 
+ * @returns {void}
+ */
+function closeAll() {
     var oldItem = document.getElementsByClassName('nav__item nav__item_list nav__item--open')[0];
     if(oldItem) {
         removeClass(oldItem, 'nav__item--open');
@@ -87,24 +115,51 @@ closeAll = () => {
     removeClass(document.getElementsByTagName("BODY")[0], 'body__toggle--open');
 }
 
-openMenu = () => {
+/**
+ * Open responsive menu.
+ * 
+ * @returns {void}
+ */
+function openMenu() {
     setClass(document.getElementsByTagName("BODY")[0], 'body--open');
     setClass(document.getElementsByTagName("BODY")[0], 'body__toggle--open');
 }
 
-closeMenu = () => {
+/**
+ * Close responsive menu.
+ * 
+ * @returns {void}
+ */
+function closeMenu() {
     removeClass(document.getElementsByTagName("BODY")[0], 'body--open');
     removeClass(document.getElementsByTagName("BODY")[0], 'body__toggle--open');
 }
 
-
-setClass = (element, className) => {
+/**
+ * Set class to element.
+ * 
+ * @param {Element} element
+ * @param {string} className Class to add of element
+ * 
+ * @returns {void}
+ */
+function setClass(element, className) {
     element.classList.add(className)
 }
 
-removeClass = (element, className) => {
+/**
+ * Remove class to element.
+ * 
+ * @param {Element} element
+ * @param {string} className Class to remove of element
+ * 
+ * @returns {void}
+ */
+function removeClass (element, className) {
     element.classList.remove(className)
 }
+
+showItems();
 
 document.getElementById('back').addEventListener('click', closeAll);
 document.getElementById('toggle-open').addEventListener('click', openMenu);
