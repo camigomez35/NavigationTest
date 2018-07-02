@@ -9,7 +9,7 @@
 @import "nav.mobile.css";
 @import "content.mobile.css";
 
-body {
-  margin: 0;
-  padding: 0;
+* {
+	margin:0;
+	padding:0;
 }

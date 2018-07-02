@@ -1,7 +1,7 @@
 @media only screen and (max-width: 768px) {
     /* Body Copy  */
     .content .content__cover .content__image_backgrond {
-        height: 240px;
+        max-height: 240px;
     }
     .content .content__title {
         font: 44px/48px HUGEAvantGardeBold;
