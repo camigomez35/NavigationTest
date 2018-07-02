@@ -11,13 +11,14 @@ Here are the guidelines for this exercise, please follow closely:
 * Chrome compliance is all that's required, all functions and features available in Chrome are in play.
 * Nav must be responsive.
 * Code must run after the following command, please ensure your code runs as you expect it to from a fresh checkout with these commands before submission.
-* Page should look good across all viewport sizes.
-* ZIP file and contained folder must be YourName_HugeNavExercise.zip.
-* Please do not include node_modules folder in the ZIP.
 
 ```
 $ npm i && npm start
 ```
+
+* Page should look good across all viewport sizes.
+* ZIP file and contained folder must be YourName_HugeNavExercise.zip.
+* Please do not include node_modules folder in the ZIP.
 
 Nice to haves (things that we look for):
 
@@ -44,10 +45,10 @@ At a high level the navigation will have two main states:
 
 ## Get Started
 
-###Requirements
+### Requirements
 * Node.js and npm (You get both when you <a href="https://docs.npmjs.com/getting-started/installing-node">install Node.js</a>.)
 
-###Install the exercise locally
+### Install the exercise locally
 ```
 git clone git@github.com:hugeinc/NavExercise.git
 cd NavExercise
