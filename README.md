@@ -1,4 +1,4 @@
-# Huge Navigation Exercise
+# Navigation Exercise
 
 ## Overview
 
